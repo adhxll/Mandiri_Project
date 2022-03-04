@@ -12,7 +12,6 @@
             <connections>
                 <outlet property="searchBar" destination="fuh-Ad-LYw" id="CCp-wD-rH2"/>
                 <outlet property="table" destination="0DW-Ib-Boc" id="qjv-pd-lWR"/>
-                <outlet property="titleLabel" destination="Zm1-aM-9iC" id="ym7-PA-OZ6"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -21,18 +20,12 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zm1-aM-9iC">
-                    <rect key="frame" x="0.0" y="110" width="414" height="43"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="fuh-Ad-LYw">
                     <rect key="frame" x="0.0" y="44" width="414" height="51"/>
                     <textInputTraits key="textInputTraits"/>
                 </searchBar>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="0DW-Ib-Boc">
-                    <rect key="frame" x="0.0" y="168" width="414" height="694"/>
+                    <rect key="frame" x="0.0" y="95" width="414" height="767"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
             </subviews>
@@ -41,14 +34,11 @@
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="0DW-Ib-Boc" secondAttribute="bottom" id="03Z-9S-Cfw"/>
                 <constraint firstItem="0DW-Ib-Boc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="KuV-IQ-S7H"/>
-                <constraint firstItem="Zm1-aM-9iC" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="YHk-dG-VBs"/>
-                <constraint firstItem="0DW-Ib-Boc" firstAttribute="top" secondItem="Zm1-aM-9iC" secondAttribute="bottom" constant="15" id="gNI-ZR-H6h"/>
+                <constraint firstItem="0DW-Ib-Boc" firstAttribute="top" secondItem="fuh-Ad-LYw" secondAttribute="bottom" id="fDd-iv-VIA"/>
                 <constraint firstItem="fuh-Ad-LYw" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="i03-Nl-zX6"/>
-                <constraint firstItem="Zm1-aM-9iC" firstAttribute="top" secondItem="fuh-Ad-LYw" secondAttribute="bottom" constant="15" id="kIH-53-8Md"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="0DW-Ib-Boc" secondAttribute="trailing" id="r4G-q9-piE"/>
                 <constraint firstItem="fuh-Ad-LYw" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="uMk-eE-e5D"/>
                 <constraint firstItem="fuh-Ad-LYw" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="vnF-u7-QtJ"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Zm1-aM-9iC" secondAttribute="trailing" id="yb9-eg-Obe"/>
             </constraints>
             <point key="canvasLocation" x="132" y="87"/>
         </view>

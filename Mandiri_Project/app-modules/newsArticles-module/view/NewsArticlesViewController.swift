@@ -10,7 +10,6 @@ import UIKit
 class NewsArticlesViewController: UIViewController {
     var presenter: NewsArticlesViewToPresenterProtocol?
     @IBOutlet var table: UITableView!
-    @IBOutlet var titleLabel: UILabel!
     @IBOutlet var searchBar: UISearchBar!
     
     var articles: [News] = []
@@ -20,7 +19,7 @@ class NewsArticlesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         initializeTable()
-        initializeLabel()
+        initializeTitle()
         initializeSearchBar()
         presenter?.populateSourcesList(sourceId: sourceId ?? "")
     }
@@ -29,10 +28,11 @@ class NewsArticlesViewController: UIViewController {
         table.delegate = self
         table.dataSource = self
         table.register(ArticlesTableViewCell.nib, forCellReuseIdentifier: ArticlesTableViewCell.identifier)
-        table.rowHeight = 100
+        table.register(NoThumbnailArticlesTableViewCell.nib, forCellReuseIdentifier: NoThumbnailArticlesTableViewCell.identifier)
+        table.rowHeight = 120
     }
-    func initializeLabel(){
-        titleLabel.text = sourceTitle
+    func initializeTitle(){
+        self.title = sourceTitle
     }
     
     func initializeSearchBar(){
@@ -61,8 +61,18 @@ extension NewsArticlesViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = table.dequeueReusableCell(withIdentifier: ArticlesTableViewCell.identifier, for: indexPath) as! ArticlesTableViewCell
-        cell.setContent(title: articles[indexPath.row].title ?? "", snippet: articles[indexPath.row].description ?? "", imageURL: articles[indexPath.row].urlToImage)
+        let article = articles[indexPath.row]
+        if let image = article.urlToImage {
+            if !image.isEmpty{
+                let cell = table.dequeueReusableCell(withIdentifier: ArticlesTableViewCell.identifier, for: indexPath) as! ArticlesTableViewCell
+                cell.setContent(title: article.title ?? "", date: article.publishedAt ?? "", snippet: article.description ?? "", imageURL: image)
+                
+                return cell
+            }
+        }
+        let cell = table.dequeueReusableCell(withIdentifier: NoThumbnailArticlesTableViewCell.identifier, for: indexPath) as! NoThumbnailArticlesTableViewCell
+        cell.setContent(title: article.title ?? "", date: article.publishedAt ?? "", snippet: article.description ?? "")
+        
         return cell
     }
     

@@ -45,6 +45,8 @@
 		D84F888E27D1ECF60025F23A /* ArticlesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D84F888C27D1ECF60025F23A /* ArticlesTableViewCell.xib */; };
 		D84F889127D21AB60025F23A /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F889027D21AB60025F23A /* UIImageView.swift */; };
 		D84F889327D245D60025F23A /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F889227D245D60025F23A /* WebViewController.swift */; };
+		D84F889827D267ED0025F23A /* NoThumbnailArticlesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F889627D267ED0025F23A /* NoThumbnailArticlesTableViewCell.swift */; };
+		D84F889927D267ED0025F23A /* NoThumbnailArticlesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D84F889727D267ED0025F23A /* NoThumbnailArticlesTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +109,8 @@
 		D84F888C27D1ECF60025F23A /* ArticlesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticlesTableViewCell.xib; sourceTree = "<group>"; };
 		D84F889027D21AB60025F23A /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		D84F889227D245D60025F23A /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		D84F889627D267ED0025F23A /* NoThumbnailArticlesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoThumbnailArticlesTableViewCell.swift; sourceTree = "<group>"; };
+		D84F889727D267ED0025F23A /* NoThumbnailArticlesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoThumbnailArticlesTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -414,10 +418,9 @@
 		D84F885227D0BEE30025F23A /* view */ = {
 			isa = PBXGroup;
 			children = (
+				D84F889527D267B50025F23A /* tableViewCells */,
 				D84F887F27D1E3B10025F23A /* NewsArticlesViewController.swift */,
 				D84F888027D1E3B10025F23A /* NewsArticlesViewController.xib */,
-				D84F888B27D1ECF60025F23A /* ArticlesTableViewCell.swift */,
-				D84F888C27D1ECF60025F23A /* ArticlesTableViewCell.xib */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -460,6 +463,17 @@
 				D84F889227D245D60025F23A /* WebViewController.swift */,
 			);
 			path = Reusable;
+			sourceTree = "<group>";
+		};
+		D84F889527D267B50025F23A /* tableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				D84F888B27D1ECF60025F23A /* ArticlesTableViewCell.swift */,
+				D84F888C27D1ECF60025F23A /* ArticlesTableViewCell.xib */,
+				D84F889627D267ED0025F23A /* NoThumbnailArticlesTableViewCell.swift */,
+				D84F889727D267ED0025F23A /* NoThumbnailArticlesTableViewCell.xib */,
+			);
+			path = tableViewCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -571,6 +585,7 @@
 				D84F887127D100980025F23A /* NewsSourcesViewController.xib in Resources */,
 				D84F880A27CE46870025F23A /* Assets.xcassets in Resources */,
 				D84F888E27D1ECF60025F23A /* ArticlesTableViewCell.xib in Resources */,
+				D84F889927D267ED0025F23A /* NoThumbnailArticlesTableViewCell.xib in Resources */,
 				D84F886027D0E3430025F23A /* NewsCategoryViewController.xib in Resources */,
 				D84F887B27D1198B0025F23A /* SourcesTableViewCell.xib in Resources */,
 				D84F886A27D0F8B70025F23A /* CategoryTableViewCell.xib in Resources */,
@@ -610,6 +625,7 @@
 				D84F886227D0E4250025F23A /* NewsCategoryPresenter.swift in Sources */,
 				D84F886D27D0FFFF0025F23A /* NewsSourcesProtocols.swift in Sources */,
 				D84F883E27CFBD170025F23A /* Constant.swift in Sources */,
+				D84F889827D267ED0025F23A /* NoThumbnailArticlesTableViewCell.swift in Sources */,
 				D84F887527D103C20025F23A /* NewsSourcesPresenter.swift in Sources */,
 				D84F887A27D1198B0025F23A /* SourcesTableViewCell.swift in Sources */,
 				D84F885527D0BF640025F23A /* NewsSource.swift in Sources */,

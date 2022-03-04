@@ -34,7 +34,7 @@ class NewsArticlesInteractor: NewsArticlesPresenterToInteractorProtocol {
     func fetchQueryArticles(query: String) {
         let data = DataManager.NEWSDATA
         let filteredData = data.filter { (news: News)-> Bool in
-            return news.title?.lowercased().contains(query.lowercased()) ?? false
+            return (news.title?.lowercased().contains(query.lowercased()) ?? false) || (news.description?.lowercased().contains(query.lowercased()) ?? false)
         }
         presenter?.noticeSuccessfulFetch(data: filteredData)
     }

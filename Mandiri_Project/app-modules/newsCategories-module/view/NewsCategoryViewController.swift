@@ -20,7 +20,9 @@ class NewsCategoryViewController: UIViewController {
     }
     
     func initializeNavBar(){
+        self.title = "Pick News Category"
         navigationController?.navigationBar.tintColor = .systemGray
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     func initializeTableView() {

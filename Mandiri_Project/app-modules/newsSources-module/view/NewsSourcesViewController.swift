@@ -16,7 +16,6 @@ class NewsSourcesViewController: UIViewController {
         }
     }
     @IBOutlet var table: UITableView!
-    @IBOutlet var pageTitleLabel: UILabel!
     @IBOutlet var searchBar: UISearchBar!
     
     override func viewWillAppear(_ animated: Bool) {
@@ -32,8 +31,7 @@ class NewsSourcesViewController: UIViewController {
     
     func initializePageTitle() {
         let title = category?.rawValue.uppercased()
-        pageTitleLabel.text = title
-        navigationController?.title = title
+        self.title = title
     }
     
     func initializeTable() {

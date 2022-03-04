@@ -17,6 +17,7 @@ class ArticlesTableViewCell: UITableViewCell {
     @IBOutlet var newsImage: UIImageView!
     @IBOutlet var newsTitle: UILabel!
     @IBOutlet var newsSnippet: UILabel!
+    @IBOutlet var dateLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -29,8 +30,9 @@ class ArticlesTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setContent(title: String, snippet: String, imageURL: String?) {
+    func setContent(title: String, date: String, snippet: String, imageURL: String?) {
         newsTitle.text = title
+        dateLabel.text = date
         newsSnippet.text = snippet
         if let url = URL(string: imageURL ?? "") {
             newsImage.imageFrom(url:url)
