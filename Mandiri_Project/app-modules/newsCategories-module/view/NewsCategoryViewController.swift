@@ -15,7 +15,12 @@ class NewsCategoryViewController: UIViewController {
         super.viewDidLoad()
         setCategories()
         initializeTableView()
+        initializeNavBar()
         // Do any additional setup after loading the view.
+    }
+    
+    func initializeNavBar(){
+        navigationController?.navigationBar.tintColor = .systemGray
     }
     
     func initializeTableView() {

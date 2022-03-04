@@ -11,6 +11,7 @@ class NewsSourcesInteractor: NewsSourcesPresenterToInteractorProtocol {
     var presenter: NewsSourcesInteractorToPresenterProtocol?
     private var placeholder: [NewsSource] = [] {
         didSet{
+            DataManager.NEWSSOURCES = placeholder
             presenter?.noticeSuccessfulFetch(data: placeholder)
         }
     }
@@ -28,5 +29,12 @@ class NewsSourcesInteractor: NewsSourcesPresenterToInteractorProtocol {
             }
         }
     }
-    
+    func fetchQueryData(query: String) {
+        let data = DataManager.NEWSSOURCES
+        let filteredData = data.filter { (source:NewsSource) -> Bool in
+            return source.name?.lowercased().contains(query.lowercased()) ?? false
+        }
+        presenter?.noticeSuccessfulFetch(data: filteredData)
+    }
+
 }

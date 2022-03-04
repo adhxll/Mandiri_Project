@@ -27,8 +27,9 @@ class NewsSourcesRouter : NewsSourcesPresenterToRouterProtocol {
         return view
     }
     
-    func pushToNewsArticlesScreen(navigationController: UINavigationController, source: String) {
-        
+    func pushToNewsArticlesScreen(navigationController: UINavigationController, sourceTitle:String, sourceId: String) {
+        let vc = NewsArticlesRouter.createModule(sourceTitle: sourceTitle, sourceId: sourceId)
+        navigationController.pushViewController(vc, animated: true)
     }
     
     

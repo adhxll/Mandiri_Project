@@ -14,8 +14,8 @@ protocol NewsSourcesViewToPresenterProtocol: AnyObject {
     var interactor: NewsSourcesPresenterToInteractorProtocol? { get set }
     var router: NewsSourcesPresenterToRouterProtocol? { get set }
     func populateSourcesList(category: NewsCategory)
-    func showNewsSourcesController(navigationController:UINavigationController, source: String)
-    
+    func showNewsSourcesController(navigationController:UINavigationController, sourceTitle:String, sourceId: String)
+    func startSearching(query: String)
 }
 
 protocol NewsSourcesPresenterToViewProtocol: AnyObject {
@@ -26,12 +26,13 @@ protocol NewsSourcesPresenterToViewProtocol: AnyObject {
 
 protocol NewsSourcesPresenterToRouterProtocol: AnyObject {
     static func createModule(category: NewsCategory)-> NewsSourcesViewController
-    func pushToNewsArticlesScreen(navigationController:UINavigationController, source: String)
+    func pushToNewsArticlesScreen(navigationController:UINavigationController, sourceTitle:String, sourceId: String)
 }
 
 protocol NewsSourcesPresenterToInteractorProtocol: AnyObject {
     var presenter: NewsSourcesInteractorToPresenterProtocol? { get set }
     func fetchSources(url:String)
+    func fetchQueryData(query: String)
     
 }
 

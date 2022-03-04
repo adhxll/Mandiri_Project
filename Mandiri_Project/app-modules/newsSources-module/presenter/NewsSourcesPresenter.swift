@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 class NewsSourcesPresenter: NewsSourcesViewToPresenterProtocol {
+    
     var view: NewsSourcesPresenterToViewProtocol?
     
     var interactor: NewsSourcesPresenterToInteractorProtocol?
@@ -20,13 +21,17 @@ class NewsSourcesPresenter: NewsSourcesViewToPresenterProtocol {
         interactor?.fetchSources(url: APIURL)
     }
     
-    func showNewsSourcesController(navigationController: UINavigationController, source: String) {
-        
+    func showNewsSourcesController(navigationController: UINavigationController, sourceTitle:String, sourceId: String) {
+        router?.pushToNewsArticlesScreen(navigationController: navigationController, sourceTitle: sourceTitle, sourceId: sourceId)
     }
     
     func getAPIURL(urlString: NewsCategory) -> String {
         let url = Endpoints.newsSourcesAPI.rawValue + "category=" + urlString.rawValue + "&apiKey=" + NEWS_API_KEY
         return url
+    }
+    
+    func startSearching(query: String) {
+        interactor?.fetchQueryData(query: query)
     }
     
 }
